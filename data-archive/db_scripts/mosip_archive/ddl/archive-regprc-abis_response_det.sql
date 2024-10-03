@@ -12,7 +12,6 @@ CREATE TABLE archive.mosip_regprc_abis_response_det(
 	is_deleted boolean DEFAULT FALSE,
 	del_dtimes timestamp,
 	CONSTRAINT pk_abisrdt PRIMARY KEY (matched_bio_ref_id,abis_resp_id)
-
 );
 -- ddl-end --
 COMMENT ON TABLE archive.mosip_regprc_abis_response_det IS 'ABIS Response Detail: Stores details of all the ABIS responses received from ABIS system. Response details will mainly have scores, which is applicable only for identify request type.';

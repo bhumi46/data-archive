@@ -5,7 +5,7 @@
             "archive_table": "mosip_regprc_abis_response_det",
             "id_column": "abis_resp_id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         },
         {
@@ -13,7 +13,7 @@
             "archive_table": "mosip_regprc_abis_response",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         },
         {
@@ -21,23 +21,23 @@
             "archive_table": "mosip_regprc_abis_request",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         },
         {
             "source_table": "reg_demo_dedupe_list",
             "archive_table": "mosip_regprc_reg_demo_dedupe_list",
-            "id_column": "id",
+            "id_column": "regtrn_id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         },
         {
             "source_table": "registration_transaction",
             "archive_table": "mosip_regprc_registration_transaction",
-            "id_column": "regtrn_id",
+            "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         }
     ]

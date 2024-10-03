@@ -5,7 +5,7 @@
             "archive_table": "mosip_ida_credential_event_store",
             "id_column": "event_id",
             "date_column": "cr_dtimes",
-            "retension_days": 30,
+            "retention_days": 30,
             "operation_type": "archive_delete"
         },
         {
@@ -13,8 +13,8 @@
             "archive_table": "mosip_ida_otp_transaction",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 30,
-            "operation_type": "archive_delete"
+            "retention_days": 30,
+            "operation_type": "delete"
         }
     ]
 }

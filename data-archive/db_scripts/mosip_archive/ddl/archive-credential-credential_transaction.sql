@@ -15,7 +15,7 @@
 -- object: archive.mosip_credential_credential_transaction | type: TABLE --
 -- DROP TABLE IF EXISTS archive.mosip_credential_credential_transaction CASCADE;
 CREATE TABLE archive.mosip_credential_credential_transaction(
-	id character varying(36) NOT NULL,
+	id character varying(64) NOT NULL,
 	credential_id character varying(36),
 	request character varying,
 	status_code character varying(32) NOT NULL,

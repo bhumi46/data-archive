@@ -1,5 +1,3 @@
-
-
 -- object: archive.mosip_regprc_abis_response | type: TABLE --
 -- DROP TABLE IF EXISTS archive.mosip_regprc_abis_response CASCADE;
 CREATE TABLE archive.mosip_regprc_abis_response(

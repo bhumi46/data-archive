@@ -32,7 +32,7 @@ CREATE TABLE archive.mosip_ida_otp_transaction(
 );
 -- ddl-end --
 --index section starts----
-CREATE INDEX ind_otphsh ON archive.mosip_ida_otp_transaction (otp_hash,status_code);
+CREATE INDEX ind_otphsh ON archive.mosip_ida_otp_transaction (ref_id,status_code);
 --index section ends------
 COMMENT ON TABLE archive.mosip_ida_otp_transaction IS 'OTP Transaction: All OTP related data and validation details are maintained here for ID Authentication module.';
 -- ddl-end --

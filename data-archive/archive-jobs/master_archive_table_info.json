@@ -5,7 +5,7 @@
             "archive_table": "mosip_master_bulkupload_transaction",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 91,
+            "retention_days": 91,
             "operation_type": "archive_delete"
         },
         {
@@ -13,7 +13,7 @@
             "archive_table": "mosip_master_device_master_h",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 365,
+            "retention_days": 365,
             "operation_type": "archive_delete"
         },
         {
@@ -21,7 +21,7 @@
             "archive_table": "mosip_master_machine_master_h",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"     
         },
         {
@@ -29,7 +29,7 @@
             "archive_table": "mosip_master_registration_center_h",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 365 ,
+            "retention_days": 365 ,
             "operation_type": "archive_delete"  
         },
         {
@@ -37,15 +37,15 @@
             "archive_table": "mosip_master_user_detail_h",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         },
         {
             "source_table": "zone_user_h",
             "archive_table": "mosip_master_zone_user_h",
-            "id_column": "usr_id",
+            "id_column": "zone_code",
             "date_column": "cr_dtimes",
-            "retension_days": 183,
+            "retention_days": 183,
             "operation_type": "archive_delete"
         }
     ]

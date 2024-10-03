@@ -28,7 +28,7 @@ ARCHIVE_DB_NAME = your_archive_db_name
 ARCHIVE_SCHEMA_NAME = your_archive_schema_name
 ARCHIVE_DB_UNAME = your_archive_db_username
 ARCHIVE_DB_PASS = your_archive_db_password
-
+BATCH_SIZE=1000
 [Databases]
 DB_NAMES = db_name1, db_name2
 
@@ -56,6 +56,7 @@ export ARCHIVE_DB_NAME=your_archive_db_name
 export ARCHIVE_SCHEMA_NAME=your_archive_schema_name
 export ARCHIVE_DB_UNAME=your_archive_db_username
 export ARCHIVE_DB_PASS=your_archive_db_password
+export BATCH_SIZE=1000
 
 export DB_NAMES=db_name1,db_name2
 
@@ -85,7 +86,6 @@ The script supports the following archiving operations for each table:
 
 - Delete: Delete records from the source table.
 - Archive and Delete: Archive records to an archive table and then delete them from the source table.
-- Archive (No Delete): Archive records to an archive table without deleting them from the source table.
 - None: Skip archival for the specified table.
 Ensure to review and customize the tables_info in the script to match your database structure and archiving requirements.
 

@@ -5,7 +5,7 @@
             "archive_table": "mosip_kernel_otp_transaction",
             "id_column": "id",
             "date_column": "generated_dtimes",
-            "retension_days": 7,
+            "retention_days": 7,
             "operation_type": "delete"
         }
     ]

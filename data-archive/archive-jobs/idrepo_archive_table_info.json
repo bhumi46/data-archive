@@ -5,7 +5,7 @@
             "archive_table": "mosip_idrepo_anonymous_profile",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 30,
+            "retention_days": 30,
             "operation_type": "archive_delete"
         },
         {
@@ -13,7 +13,7 @@
             "archive_table": "mosip_idrepo_credential_request_status",
             "id_column": "individual_id",
             "date_column": "cr_dtimes",
-            "retension_days": 30,
+            "retention_days": 30,
             "operation_type": "archive_delete"            
         },
         {
@@ -21,7 +21,7 @@
             "archive_table": "mosip_idrepo_uin_draft",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 30,
+            "retention_days": 30,
             "operation_type": "archive_delete"            
         }        
     ]

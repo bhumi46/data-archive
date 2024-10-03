@@ -5,7 +5,7 @@
             "archive_table": "mosip_esignet_consent_history",
             "id_column": "id",
             "date_column": "cr_dtimes",
-            "retension_days": 30,
+            "retention_days": 30,
             "operation_type": "archive_delete"
         }
     ]
