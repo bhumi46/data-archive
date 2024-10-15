@@ -182,30 +182,28 @@ def data_archive(db_name, db_param, tables_info, batch_size):
     try:
         print(f'Connecting to the PostgreSQL source and archive databases for {db_name}...')
 
-        # Establish connection to the source database with synchronous_commit set to off
+        # Establish connection to the source database
         try:
             source_conn = psycopg2.connect(
                 user=db_param[f"{db_name}_SOURCE_DB_UNAME"],
                 password=db_param[f"{db_name}_SOURCE_DB_PASS"],
                 host=db_param[f"{db_name}_SOURCE_DB_HOST"],
                 port=db_param[f"{db_name}_SOURCE_DB_PORT"],
-                database=db_param[f"{db_name}_SOURCE_DB_NAME"],
-                options="-c synchronous_commit=off"  # Set synchronous_commit to off for this session
+                database=db_param[f"{db_name}_SOURCE_DB_NAME"]
             )
             source_cur = source_conn.cursor()
         except psycopg2.OperationalError as e:
             print(f"Error connecting to the source database for {db_name}: {e}")
             sys.exit(1)
 
-        # Establish connection to the archive database with synchronous_commit set to off
+        # Establish connection to the archive database
         try:
             archive_conn = psycopg2.connect(
                 user=db_param["ARCHIVE_DB_UNAME"],
                 password=db_param["ARCHIVE_DB_PASS"],
                 host=db_param["ARCHIVE_DB_HOST"],
                 port=db_param["ARCHIVE_DB_PORT"],
-                database=db_param["ARCHIVE_DB_NAME"],
-                options="-c synchronous_commit=off"  # Set synchronous_commit to off for this session
+                database=db_param["ARCHIVE_DB_NAME"]
             )
             archive_cur = archive_conn.cursor()
         except psycopg2.OperationalError as e:
