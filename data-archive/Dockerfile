@@ -25,11 +25,6 @@ RUN apt-get update && \
         curl \
         && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y \
-    gcc \
-    libpq-dev \
-    python3-dev \
-    && rm -rf /var/lib/apt/lists/*
 
 # Set up virtual environment
 RUN python3 -m venv /venv
