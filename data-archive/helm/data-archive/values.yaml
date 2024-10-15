@@ -31,7 +31,7 @@ replicaCount: 1
 
 image:
   registry: docker.io
-  repository: mosipqa/data-archive
+  repository: mosipdev/data-archive
   tag: develop
 
   ## Specify a imagePullPolicy
