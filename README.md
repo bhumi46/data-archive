@@ -1,5 +1,5 @@
-# mosip-ref-impl
-This repository contains components that can be customized by a country. For example, pre-registration-ui that builds on top of the Pre-Registration services can be customized by a country as per their needs.
+# PostgreSQL Data Archiving Repository
+This repository provides a Python script for archiving data from PostgreSQL databases, allowing customization for specific requirements. It supports operations like deleting and archiving records, with configuration options via a db.properties file or environment variables.
 
 
 

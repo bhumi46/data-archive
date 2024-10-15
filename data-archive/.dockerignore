@@ -1,5 +1,7 @@
 archive-jobs/db.properties
 archive-jobs/*.json
+deploy/
+helm/
 **/.git
 **/.gitignore
 **/.vscode

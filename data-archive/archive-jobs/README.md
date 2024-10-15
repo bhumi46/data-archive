@@ -85,7 +85,7 @@ The script supports the following archiving operations for each table:
 *operation_type in table_info.json:
 
 - Delete: Delete records from the source table.
-- Archive and Delete: Archive records to an archive table and then delete them from the source table.
+- Archive_Delete: Archive records to an archive table and then delete them from the source table.
 - None: Skip archival for the specified table.
 Ensure to review and customize the tables_info in the script to match your database structure and archiving requirements.
 
