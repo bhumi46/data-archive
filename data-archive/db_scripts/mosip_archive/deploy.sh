@@ -19,10 +19,6 @@ fi
 MASTERCONN=$(PGPASSWORD=$SU_USER_PWD psql --username=$SU_USER --host=$DB_SERVERIP --port=$DB_PORT --dbname=$DEFAULT_DB_NAME -t -c "SELECT count(1) FROM pg_roles WHERE rolname = 'archiveuser';")
 
 if [ ${MASTERCONN} == 0 ]; then
-    ## Terminate existing connections if archiveuser does not exist
-    echo "Terminating active connections" 
-    CONN=$(PGPASSWORD=$SU_USER_PWD psql -v ON_ERROR_STOP=1 --username=$SU_USER --host=$DB_SERVERIP --port=$DB_PORT --dbname=$DEFAULT_DB_NAME -t -c "SELECT count(pg_terminate_backend(pg_stat_activity.pid)) FROM pg_stat_activity WHERE datname = '$MOSIP_DB_NAME' AND pid <> pg_backend_pid();")
-    echo "Terminated connections"
 
     ## Create users
     echo "$(date "+%m/%d/%Y %H:%M:%S"): Creating Archive database user"
@@ -36,7 +32,7 @@ if [ ${MASTERCONN} == 0 ]; then
     ## Grants
     PGPASSWORD=$SU_USER_PWD psql -v ON_ERROR_STOP=1 --username=$SU_USER --host=$DB_SERVERIP --port=$DB_PORT --dbname=$DEFAULT_DB_NAME -f grants.sql
 else
-    echo "Archive user already exists, skipping connection termination and user creation."
+    echo "Archive user already exists"
 fi
  
 ## Populate tables
