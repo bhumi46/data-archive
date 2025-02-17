@@ -37,12 +37,8 @@ spec:
               - name: DB_NAMES
                 value: {{ $dbnames.name | upper }}
             envFrom:
-              - configMapRef:
-                  name: db-archive-init-env-config
               - secretRef:
                   name: source-db-secrets
-              - secretRef:
-                  name: archive-db-secrets
             {{- if $.Values.resources }}
             resources: {{- toYaml $.Values.resources | nindent 14 }}
             {{- end }}

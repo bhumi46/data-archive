@@ -2,16 +2,12 @@
 # entrypoint.sh
 set -e
 
-echo "Executing db.sh"
+echo "Executing archive-jobs sequentially"
 
-bash db.sh
+# Navigate to the archive-jobs directory
+cd archive-jobs
 
-echo "executed db.sh succesfully"
+# Execute the Python script
+python3 mosip_archive_main.py
 
-sleep 1m
-
-echo "Executing archive.sh"
-
-bash archive.sh
-
-echo "executed archive.sh successfully"
+echo "Executed archive-jobs successfully"

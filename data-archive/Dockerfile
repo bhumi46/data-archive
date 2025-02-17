@@ -36,14 +36,7 @@ COPY . .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Define environment variables with default values
-ENV DB_SERVERIP= \
-    DB_PORT= \
-    SU_USER= \
-    DBUSER_PWD= \
-    MOSIP_DB_NAME= \
-    DML_FLAG= \
-    DB_NAMES= \
-    BATCH_SIZE= \
+ENV BATCH_SIZE= \
     AUDIT_SOURCE_DB_HOST= \
     AUDIT_SOURCE_DB_PORT= \
     AUDIT_SOURCE_DB_UNAME= \

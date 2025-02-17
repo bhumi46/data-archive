@@ -12,11 +12,6 @@ metadata:
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
 data:
-  MOSIP_DB_NAME: {{ .Values.databases.archive_db.db_name | quote }}
-  SU_USER: {{ .Values.databases.archive_db.su_user | quote }}
-  DB_SERVERIP: {{ .Values.databases.archive_db.host | quote }}
-  DB_PORT: {{ .Values.databases.archive_db.port | quote }}
-  DML_FLAG: {{ .Values.databases.archive_db.dml | quote }}
   BATCH_SIZE: {{ .Values.databases.archive_db.batch_size | quote }}
   AUDIT_SOURCE_DB_HOST: {{ .Values.databases.source_db.source_audit_host | quote }}
   AUDIT_SOURCE_DB_PORT: {{ .Values.databases.source_db.source_audit_port | quote }}

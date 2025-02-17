@@ -42,8 +42,11 @@ function installing_data-archive() {
     super_user_password=$(kubectl get secret --namespace postgres postgres-postgresql -o jsonpath={.data.postgres-password} | base64 --decode)
     echo "Common secrets will be used as passwords for all the db users."
     db_common_password=$(kubectl get secret --namespace postgres db-common-secrets -o jsonpath={.data.db-dbuser-password} | base64 --decode)
-    set_db_pwd="--set databases.archive_db.su_user_pwd=$super_user_password \
-      --set databases.source_db.source_audit_db_pass=$db_common_password \
+    set_archive_dbinit_pwd="--set databases.mosip_archive.su_user_pwd=$super_user_password \
+      --set databases.mosip_archive.db_pwd=$db_common_password \
+      --set databases.mosip_archive.archive_db_password=$db_common_password"
+
+    set_db_pwd="--set databases.source_db.source_audit_db_pass=$db_common_password \
       --set databases.source_db.source_credential_db_pass=$db_common_password \
       --set databases.source_db.source_esignet_db_pass=$db_common_password \
       --set databases.source_db.source_ida_db_pass=$db_common_password \
@@ -54,19 +57,21 @@ function installing_data-archive() {
       --set databases.source_db.source_prereg_db_pass=$db_common_password \
       --set databases.source_db.source_regprc_db_pass=$db_common_password \
       --set databases.source_db.source_resident_db_pass=$db_common_password \
-      --set databases.archive_db.db_pwd=$db_common_password \
       --set databases.archive_db.archive_db_password=$db_common_password"
 
   elif [ "$archival_running" == "N" ]; then
     echo "Other installation selected.This will Use individual secrets for db passwords from values.yaml"
+    set_archive_dbinit_pwd=""
     set_db_pwd=""
   else
     echo "Incorrect input; EXITING;"
     exit 1;
   fi
+  echo Running postgres-init job
+  helm -n $NS install postgres-init /home/bhuminathan/MOSIP-39265/bn46/postgres-init/helm/postgres-init -f archive_dbinit_values.yaml $set_archive_dbinit_pwd --version $CHART_VERSION --wait --wait-for-jobs
 
   # Install data-archive
-  helm -n $NS install data-archive mosip/data-archive --set crontime="0 $time * * *" -f values.yaml $set_db_pwd --version $CHART_VERSION
+  helm -n $NS install data-archive /home/bhuminathan/MOSIP-39265/data-archive/helm/data-archive --set crontime="0 $time * * *" -f values.yaml $set_db_pwd --version $CHART_VERSION
 
   echo Installed data-archive
   return 0

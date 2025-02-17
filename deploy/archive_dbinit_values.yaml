@@ -1,0 +1,26 @@
+databases:
+  mosip_archive:
+    enabled: true
+    dbdir: mosip_archive
+    host: "postgres-postgresql"
+    port: 5432
+    su_user: "postgres"
+    su_user_pwd: ""
+    db_pwd: ""
+    archive_db_password: ""
+    components:
+      audit:
+        enabled: true
+        repoUrl: https://github.com/mosip/audit.git
+        branch: develop
+        dml: 0
+      idrepo:
+        enabled: true
+        repoUrl: https://github.com/mosip/id-repository.git
+        branch: develop
+        dml: 0
+      kernel:
+        enabled: false
+        repoUrl: https://github.com/mosip/commons.git
+        branch: develop
+        dml: 0

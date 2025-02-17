@@ -303,13 +303,6 @@ crontime: "0 4 * * *"    ## run cronjob every day at 4 AM in GMT which is 9.30 A
 
 databases:
   archive_db:
-    db_name: "mosip_archive"
-    host: "api-internal.sandbox.xyz.net"
-    port: 5432
-    su_user: "postgres"
-    su_user_pwd: ""
-    db_pwd: ""
-    dml: 0
     archivehost: "api-internal.sandbox.xyz.net"
     archiveport: 5432
     archiveuname: "archiveuser"
@@ -318,40 +311,6 @@ databases:
     archive_db_password: ""
     batch_size: 1000
 
-  db_names:
-    - name: audit
-      enabled: true
-      container_volume_path: /audit-table-info  ## volume mount path for table info inside cronjob container
-    - name: ida
-      enabled: true
-      container_volume_path: /ida-table-info  ## volume mount path for table info inside cronjob container
-    - name: credential
-      enabled: true
-      container_volume_path: /credential-table-info  ## volume mount path for table info inside cronjob container
-    - name: kernel
-      enabled: true
-      container_volume_path: /kernel-table-info  ## volume mount path for table info inside cronjob container
-    - name: master
-      enabled: true
-      container_volume_path: /master-table-info  ## volume mount path for table info inside cronjob container
-    - name: pms
-      enabled: true
-      container_volume_path: /pms-table-info  ## volume mount path for table info inside cronjob container
-    - name: regprc
-      enabled: true
-      container_volume_path: /regprc-table-info  ## volume mount path for table info inside cronjob container
-    - name: resident
-      enabled: true
-      container_volume_path: /resident-table-info  ## volume mount path for table info inside cronjob container
-    - name: idrepo
-      enabled: true
-      container_volume_path: /idrepo-db-info-json
-    - name: prereg
-      enabled: true
-      container_volume_path: /prereg-db-info-json
-    - name: esignet
-      enabled: true
-      container_volume_path: /esignet-db-info-json
   source_db:
     source_audit_host: "api-internal.sandbox.xyz.net"
     source_audit_port: 5432
@@ -419,6 +378,42 @@ databases:
     source_resident_dbname: "mosip_resident"
     source_resident_schemaname: "resident"
     source_resident_db_pass: ""
+
+  db_names:
+    - name: audit
+      enabled: true
+      container_volume_path: /audit-table-info  ## volume mount path for table info inside cronjob container
+    - name: ida
+      enabled: true
+      container_volume_path: /ida-table-info  ## volume mount path for table info inside cronjob container
+    - name: credential
+      enabled: true
+      container_volume_path: /credential-table-info  ## volume mount path for table info inside cronjob container
+    - name: kernel
+      enabled: true
+      container_volume_path: /kernel-table-info  ## volume mount path for table info inside cronjob container
+    - name: master
+      enabled: true
+      container_volume_path: /master-table-info  ## volume mount path for table info inside cronjob container
+    - name: pms
+      enabled: true
+      container_volume_path: /pms-table-info  ## volume mount path for table info inside cronjob container
+    - name: regprc
+      enabled: true
+      container_volume_path: /regprc-table-info  ## volume mount path for table info inside cronjob container
+    - name: resident
+      enabled: true
+      container_volume_path: /resident-table-info  ## volume mount path for table info inside cronjob container
+    - name: idrepo
+      enabled: true
+      container_volume_path: /idrepo-db-info-json
+    - name: prereg
+      enabled: true
+      container_volume_path: /prereg-db-info-json
+    - name: esignet
+      enabled: true
+      container_volume_path: /esignet-db-info-json
+
   all_db_tables_info:
     audit:
       tables_info:
